@@ -132,7 +132,7 @@ public class CrewService {
 
         UnwindOperation unwindDistrict = Aggregation.unwind("district", true);
 
-        ProjectionOperation project = Aggregation.project()
+        ProjectionOperation project = Aggregation.fleetservice()
                 .and("fleet.name").as("fleetName")
                 .and("district.name").as("districtName")
                 .and(DateOperators.dateOf("startDate")
